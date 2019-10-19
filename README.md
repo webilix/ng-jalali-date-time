@@ -2,13 +2,11 @@
 
 Jalali date / month / range picker for Angular with Material Design support
 
-[Full Help](https://)
+[Full Help](https://github.com/webilix/ng-jalali-date-time/blob/master/projects/ng-jalali-date-time/README.md)
 
 ---
 
 ## Directives
-
-<center>
 
 ### jalali-date-time Directive
 
@@ -33,8 +31,6 @@ Jalali date / month / range picker for Angular with Material Design support
 ```html
 <span jalali-range></span>
 ```
-
-</center>
 
 ---
 
