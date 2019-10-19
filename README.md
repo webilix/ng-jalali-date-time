@@ -41,3 +41,14 @@ Jalali date / month / range picker for Angular with Material Design support
 -   Component Configuration
 -   Complete Style Management
 -   Jalali Date/Tile Pipes
+
+---
+
+## Demo
+
+```bash
+git clone https://github.com/webilix/ng-jalali-date-time.git
+cd ng-jalali-date-time
+npm install
+ng serve
+```
