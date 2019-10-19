@@ -1,0 +1,190 @@
+<div class="ng-jalali-back" *ngIf="show" (click)="showCalendar(false)"></div>
+
+<div [formGroup]="form" [ngStyle]="{ display: 'none' }">
+    <input type="text" [formControlName]="name" />
+</div>
+
+<content class="ng-jalali">
+    <mat-form-field [ngStyle]="css.field" class="ng-jalali" [formGroup]="form">
+        <mat-label [ngStyle]="{ fontFamily: css.font }">{{ label }}</mat-label>
+        <input
+            matInput
+            id="input{{ random }}"
+            type="text"
+            [formControlName]="name + '-title'"
+            (focus)="showCalendar(true)"
+            [ngStyle]="css.input"
+            class="ng-jalali"
+        />
+        <span *ngIf="config.reset && value.range !== ''" matSuffix (click)="setRange('reset'); reset = true">
+            <button mat-button [ngStyle]="css.reset" class="ng-jalali-reset">x</button>
+        </span>
+        <mat-error [ngStyle]="{ fontFamily: css.font }" *ngIf="form.get(name + '-title').hasError('required')">
+            {{ config.error }}
+        </mat-error>
+    </mat-form-field>
+
+    <div class="ng-jalali-calendar" [ngStyle]="css.box" [@calendar] *ngIf="show">
+        <div class="ng-jalali-range-tools">
+            <button
+                mat-button
+                [ngStyle]="custom.from === '' || custom.to === '' ? css.range.custom : css.range.confirm"
+                [disabled]="custom.from === '' || custom.to === ''"
+                (click)="setRange('custom')"
+                class="ng-jalali-range-custom"
+            >
+                {{
+                    custom.from === '' || custom.to === '' ? jalaliLocale.rangeCustom : jalaliLocale.rangeCustomConfirm
+                }}
+            </button>
+            <button mat-button [ngStyle]="css.range.tool" (click)="setRange('current-week')">
+                {{ jalaliLocale.rangeCurrentWeek }}
+            </button>
+            <button mat-button [ngStyle]="css.range.tool" (click)="setRange('current-month')">
+                {{ jalaliLocale.rangeCurrentMonth }}
+            </button>
+            <button mat-button [ngStyle]="css.range.tool" (click)="setRange('last-7days')">
+                {{ jalaliLocale.rangeLast7Days }}
+            </button>
+            <button mat-button [ngStyle]="css.range.tool" (click)="setRange('last-30days')">
+                {{ jalaliLocale.rangeLast30Days }}
+            </button>
+            <button mat-button [ngStyle]="css.range.tool" (click)="setRange('next-7days')">
+                {{ jalaliLocale.rangeNext7Days }}
+            </button>
+            <button mat-button [ngStyle]="css.range.tool" (click)="setRange('next-30days')">
+                {{ jalaliLocale.rangeNext30Days }}
+            </button>
+        </div>
+        <div class="ng-jalali-range-custom">
+            <div class="ng-jalali-range-from">
+                <div class="ng-jalali-header">
+                    <div>
+                        <button
+                            mat-icon-button
+                            [ngStyle]="css.arrow"
+                            (click)="changeMonth('from', -12)"
+                            [disabled]="fMonth.substr(0, 4) === '1000'"
+                        >
+                            &lt;&lt;
+                        </button>
+                    </div>
+                    <div>
+                        <button
+                            mat-icon-button
+                            [ngStyle]="css.arrow"
+                            (click)="changeMonth('from', -1)"
+                            [disabled]="fMonth === '1000-01'"
+                        >
+                            &lt;
+                        </button>
+                    </div>
+                    <div class="ng-jalali-title" [ngStyle]="css.header">{{ fCalendar.title }}</div>
+                    <div>
+                        <button mat-icon-button [ngStyle]="css.arrow" (click)="changeMonth('from', 1)">&gt;</button>
+                    </div>
+                    <div>
+                        <button mat-icon-button [ngStyle]="css.arrow" (click)="changeMonth('from', 12)">
+                            &gt;&gt;
+                        </button>
+                    </div>
+                </div>
+                <div class="ng-jalali-range-header">
+                    <div [ngStyle]="css.range.name" *ngFor="let day of week">{{ day }}</div>
+                </div>
+                <section>
+                    <div *ngFor="let week of fCalendar.weeks" class="ng-jalali-range-week">
+                        <div *ngFor="let day of week.days" class="ng-jalali-range-day">
+                            <button
+                                mat-icon-button
+                                [disabled]="
+                                    day.month !== fMonth ||
+                                    (config.min && day.date < config.min) ||
+                                    (config.max && day.date > config.max) ||
+                                    (custom.to !== '' && day.date >= custom.to)
+                                "
+                                [ngClass]="{
+                                    'ng-jalali-selected': day.date === custom.from,
+                                    'ng-jalali-current': day.date === today
+                                }"
+                                [ngStyle]="
+                                    day.date === today
+                                        ? css.current
+                                        : day.date === custom.from
+                                        ? css.selected
+                                        : css.item
+                                "
+                                (click)="setCustomDate(day.date, custom.to)"
+                            >
+                                {{ day.day }}
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <div class="ng-jalali-range-custom-title" [ngStyle]="css.range.date">{{ fTitle }}</div>
+            </div>
+            <div class="ng-jalali-range-to">
+                <div class="ng-jalali-header">
+                    <div>
+                        <button
+                            mat-icon-button
+                            [ngStyle]="css.arrow"
+                            (click)="changeMonth('to', -12)"
+                            [disabled]="tMonth.substr(0, 4) === '1000'"
+                        >
+                            &lt;&lt;
+                        </button>
+                    </div>
+                    <div>
+                        <button
+                            mat-icon-button
+                            [ngStyle]="css.arrow"
+                            (click)="changeMonth('to', -1)"
+                            [disabled]="tMonth === '1000-01'"
+                        >
+                            &lt;
+                        </button>
+                    </div>
+                    <div class="ng-jalali-title" [ngStyle]="css.header">{{ tCalendar.title }}</div>
+                    <div>
+                        <button mat-icon-button [ngStyle]="css.arrow" (click)="changeMonth('to', 1)">&gt;</button>
+                    </div>
+                    <div>
+                        <button mat-icon-button [ngStyle]="css.arrow" (click)="changeMonth('to', 12)">
+                            &gt;&gt;
+                        </button>
+                    </div>
+                </div>
+                <div class="ng-jalali-range-header">
+                    <div [ngStyle]="css.range.name" *ngFor="let day of week">{{ day }}</div>
+                </div>
+                <section>
+                    <div *ngFor="let week of tCalendar.weeks" class="ng-jalali-range-week">
+                        <div *ngFor="let day of week.days" class="ng-jalali-range-day">
+                            <button
+                                mat-icon-button
+                                [disabled]="
+                                    day.month !== tMonth ||
+                                    (config.min && day.date < config.min) ||
+                                    (config.max && day.date > config.max) ||
+                                    (custom.from !== '' && day.date <= custom.from)
+                                "
+                                [ngClass]="{
+                                    'ng-jalali-selected': day.date === custom.to,
+                                    'ng-jalali-current': day.date === today
+                                }"
+                                [ngStyle]="
+                                    day.date === today ? css.current : day.date === custom.to ? css.selected : css.item
+                                "
+                                (click)="setCustomDate(custom.from, day.date)"
+                            >
+                                {{ day.day }}
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <div class="ng-jalali-range-custom-title" [ngStyle]="css.range.date">{{ tTitle }}</div>
+            </div>
+        </div>
+    </div>
+</content>

@@ -1,0 +1,10 @@
+{
+    "name": "ng-jalali-date-time",
+    "version": "0.0.1",
+    "peerDependencies": {
+        "@angular/common": "^8.2.11",
+        "@angular/core": "^8.2.11",
+        "@angular/material": "^8.2.3",
+        "jalali-date-time": "^3.0.0"
+    }
+}

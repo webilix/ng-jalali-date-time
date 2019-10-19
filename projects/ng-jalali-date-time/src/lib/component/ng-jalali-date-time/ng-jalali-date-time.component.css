@@ -1,0 +1,42 @@
+div.ng-jalali-date-time-header {
+    display: flex;
+}
+
+div.ng-jalali-date-time-header div {
+    flex: 1;
+    padding: 1rem 0.2rem;
+    text-align: center;
+    background-color: #ddd;
+}
+
+div.ng-jalali-date-time-week {
+    display: flex;
+}
+
+div.ng-jalali-date-time-day {
+    flex: 1;
+    padding: 0.2rem;
+    text-align: center;
+}
+
+div.ng-jalali-date-time-time {
+    display: flex;
+    margin: 0.5rem;
+    direction: ltr;
+    align-items: center;
+}
+
+div.ng-jalali-date-time-time div {
+    width: 2rem;
+    text-align: center;
+}
+
+div.ng-jalali-date-time-time input {
+    flex: 1;
+    padding: 0.5rem;
+    text-align: center;
+    border: 0px;
+    background-color: #eee;
+    direction: rtl;
+    outline: none;
+}

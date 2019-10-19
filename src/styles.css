@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+    background-color: #eee;
+}
+
+@font-face {
+    font-family: 'yekan';
+    src: url('./assets/font/yekan.eot');
+    src: url('./assets/font/yekan.eot?#iefix') format('embedded-opentype'),
+        url('./assets/font/yekan.woff') format('woff'), url('./assets/font/yekan.ttf') format('truetype'),
+        url('./assets/font/yekan.svg') format('svg');
+}

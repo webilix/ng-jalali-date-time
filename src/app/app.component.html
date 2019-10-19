@@ -1,0 +1,175 @@
+<div>
+    <mat-toolbar color="primary">ng-jalali-date-time library Directives</mat-toolbar>
+    <content>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Date/Time</mat-card-title>
+                <mat-card-subtitle> jalali-date-time</mat-card-subtitle>
+            </mat-card-header>
+            <mat-divider></mat-divider>
+            <mat-card-content>
+                <section class="jalali">
+                    <span
+                        jalali-date-time
+                        [config]="{ time: true }"
+                        [css]="{ font: 'yekan' }"
+                        label="انتخاب تاریخ"
+                        (changed)="setDate($event)"
+                    ></span>
+                </section>
+                <section class="value">
+                    <pre *ngIf="values.date">{{ values.date | json }}</pre>
+                </section>
+            </mat-card-content>
+        </mat-card>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Month</mat-card-title>
+                <mat-card-subtitle>jalali-month</mat-card-subtitle>
+            </mat-card-header>
+            <mat-divider></mat-divider>
+            <mat-card-content>
+                <section class="jalali">
+                    <span jalali-month [css]="{ font: 'yekan' }" label="انتخاب ماه" (changed)="setMonth($event)"></span>
+                </section>
+                <section class="value">
+                    <pre *ngIf="values.month">{{ values.month | json }}</pre>
+                </section>
+            </mat-card-content>
+        </mat-card>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Range</mat-card-title>
+                <mat-card-subtitle>jalali-range</mat-card-subtitle>
+            </mat-card-header>
+            <mat-divider></mat-divider>
+            <mat-card-content>
+                <section class="jalali">
+                    <span
+                        jalali-range
+                        [css]="{ font: 'yekan' }"
+                        label="انتخاب بازه زمانی"
+                        (changed)="setRange($event)"
+                    ></span>
+                </section>
+                <section class="value">
+                    <pre *ngIf="values.range">{{ values.range | json }}</pre>
+                </section>
+            </mat-card-content>
+        </mat-card>
+    </content>
+</div>
+
+<div>
+    <mat-toolbar color="primary">ng-jalali-date-time library Pipes</mat-toolbar>
+    <content class="pipe">
+        <section class="pipe">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>jalaliDate (date)</mat-card-title>
+                    <mat-card-subtitle>'{{ jalaliDate }}' | jalaliDate</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>{{ jalaliDate | jalaliDate }}</mat-card-content>
+            </mat-card>
+        </section>
+        <section class="pipe">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>jalaliDate (date/time)</mat-card-title>
+                    <mat-card-subtitle>'{{ jalaliDate + ' ' + jalaliTime }}' | jalaliDate</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>{{ jalaliDate + ' ' + jalaliTime | jalaliDate }}</mat-card-content>
+            </mat-card>
+        </section>
+        <section class="pipe">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>jalaliMonth</mat-card-title>
+                    <mat-card-subtitle>'{{ jalaliMonth }}' | jalaliMonth</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content class="fa">{{ jalaliMonth | jalaliMonth }}</mat-card-content>
+            </mat-card>
+        </section>
+        <section class="pipe">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>jalaliRange</mat-card-title>
+                    <mat-card-subtitle>'{{ jalaliRange }}' | jalaliRange</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content class="fa">{{ jalaliRange | jalaliRange }}</mat-card-content>
+            </mat-card>
+        </section>
+        <section class="pipe">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>jalaliFull (string)</mat-card-title>
+                    <mat-card-subtitle>'{{ jalaliDate + ' ' + jalaliTime }}' | jalaliFull</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content class="fa">{{ jalaliDate + ' ' + jalaliTime | jalaliFull }}</mat-card-content>
+            </mat-card>
+        </section>
+        <section class="pipe">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>jalaliFull (timestamp)</mat-card-title>
+                    <mat-card-subtitle>{{ jalaliTimestamp }} | jalaliFull</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content class="fa">{{ jalaliTimestamp | jalaliFull }}</mat-card-content>
+            </mat-card>
+        </section>
+        <section class="pipe">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>jalaliTitle (string)</mat-card-title>
+                    <mat-card-subtitle>'{{ jalaliDate }}' | jalaliTitle</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content class="fa">{{ jalaliDate | jalaliTitle }}</mat-card-content>
+            </mat-card>
+        </section>
+        <section class="pipe">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>jalaliTitle (timestamp)</mat-card-title>
+                    <mat-card-subtitle>{{ jalaliTimestamp }} | jalaliTitle</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content class="fa">{{ jalaliTimestamp | jalaliTitle }}</mat-card-content>
+            </mat-card>
+        </section>
+        <section class="pipe">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>jalaliTimestamp (date)</mat-card-title>
+                    <mat-card-subtitle>'{{ jalaliDate }}' | jalaliTimestamp</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>{{ jalaliDate | jalaliTimestamp }}</mat-card-content>
+            </mat-card>
+        </section>
+        <section class="pipe">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>jalaliTimestamp (date/time)</mat-card-title>
+                    <mat-card-subtitle>'{{ jalaliDate + ' ' + jalaliTime }}' | jalaliTimestamp</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>{{ jalaliDate + ' ' + jalaliTime | jalaliTimestamp }}</mat-card-content>
+            </mat-card>
+        </section>
+        <section class="pipe">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>jalaliDays (range)</mat-card-title>
+                    <mat-card-subtitle>'{{ jalaliRange }}' | jalaliDays</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>{{ jalaliRange | jalaliDays }}</mat-card-content>
+            </mat-card>
+        </section>
+        <section class="pipe">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>jalaliDays (date)</mat-card-title>
+                    <mat-card-subtitle>'{{ jalaliDate }}' | jalaliDays</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>{{ jalaliDate | jalaliDays }}</mat-card-content>
+            </mat-card>
+        </section>
+    </content>
+</div>

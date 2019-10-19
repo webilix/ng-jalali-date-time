@@ -1,0 +1,8 @@
+div.ng-jalali-month-season {
+    display: flex;
+}
+
+div.ng-jalali-month-season button {
+    flex: 1;
+    padding: 0.5rem 2rem;
+}

@@ -1,0 +1,11 @@
+{
+    "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+    "dest": "../../dist/ng-jalali-date-time",
+    "lib": {
+        "entryFile": "src/public-api.ts",
+        "umdModuleIds": {
+            "jalali-date-time": "jalali-date-time"
+        },
+        "styleIncludePaths": ["lib/shared/jalali.style.css"]
+    }
+}

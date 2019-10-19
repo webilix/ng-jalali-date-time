@@ -1,0 +1,102 @@
+div.ng-jalali-range-tools {
+    display: flex;
+}
+
+div.ng-jalali-range-tools button {
+    flex: 1;
+    padding: 0.5rem 0;
+    text-align: center;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background-color: #fafafa;
+    border-radius: 0px;
+    white-space: normal;
+    min-width: auto;
+}
+
+div.ng-jalali-range-tools button.ng-jalali-range-custom {
+    border-width: 0px;
+    background-color: #fff;
+}
+
+div.ng-jalali-range-custom {
+    display: flex;
+    flex-direction: row;
+}
+
+div.ng-jalali-range-from {
+    flex: 1;
+    margin: 0 0 0 0.5rem;
+}
+
+div.ng-jalali-range-to {
+    flex: 1;
+    margin: 0 0.5rem 0 0;
+}
+
+@media only screen and (max-width: 800px) {
+    div.ng-jalali-range-custom {
+        flex-direction: column;
+    }
+
+    div.ng-jalali-range-from {
+        flex: 1;
+        margin: 0 0 0.5rem 0;
+    }
+
+    div.ng-jalali-range-to {
+        flex: 1;
+        margin: 0.5rem 0 0 0;
+    }
+}
+
+div.ng-jalali-range-from,
+div.ng-jalali-range-to {
+    display: flex;
+    flex-direction: column;
+}
+
+div.ng-jalali-range-from section,
+div.ng-jalali-range-to section {
+    flex: 1;
+}
+
+div.ng-jalali-range-header {
+    display: flex;
+    align-items: center;
+}
+
+div.ng-jalali-range-header {
+    display: flex;
+}
+
+div.ng-jalali-range-header div {
+    flex: 1;
+    padding: 1rem 0.2rem;
+    text-align: center;
+    background-color: #ddd;
+}
+
+div.ng-jalali-range-week {
+    display: flex;
+}
+
+div.ng-jalali-range-day {
+    flex: 1;
+    padding: 0.2rem;
+    text-align: center;
+}
+
+div.ng-jalali-range-custom-title {
+    border-top: 1px solid #ccc;
+    padding: 1rem;
+    text-align: center;
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 800px) {
+    div.ng-jalali-range-custom-title {
+        border-top-width: 0px;
+        border-bottom: 1px solid #ccc;
+    }
+}
