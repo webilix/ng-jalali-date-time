@@ -52,7 +52,7 @@ import { NgJalaliDateTimeModule } from 'ng-jalali-date-time';
 
 ## jalali-date-time Directive
 
-![alt text](../../src/assets/date-time-picker.png 'jalali-date-time')
+![alt text](https://github.com/webilix/ng-jalali-date-time/raw/master/src/assets/date-time-picker.png 'jalali-date-time')
 
 ```html
 <span jalali-date-time></span>
@@ -64,8 +64,8 @@ import { NgJalaliDateTimeModule } from 'ng-jalali-date-time';
 | ------ | ------------------------------------------------------------------- | ------------------------------------- |
 | form   | FormGroup                                                           | Components FormGroup (Reactive Forms) |
 | name   | string                                                              | Form object name (Reactive Forms)     |
-| config | [NgJalaliDateTimeConfigInterface](#NgJalaliDateTimeConfigInterface) | Object configurations                 |
-| css    | [NgJalaliDateTimeCssInterface](#NgJalaliDateTimeCssInterface)       | Object css styles                     |
+| config | [NgJalaliDateTimeConfigInterface](#ngjalalidatetimeconfiginterface) | Object configurations                 |
+| css    | [NgJalaliDateTimeCssInterface](#ngjalalidatetimecssinterface)       | Object css styles                     |
 | date   | string                                                              | Default date value                    |
 | time   | string                                                              | Default time value                    |
 | label  | string                                                              | mat-form-field label                  |
@@ -74,7 +74,7 @@ import { NgJalaliDateTimeModule } from 'ng-jalali-date-time';
 
 | Name    | type                                                              |
 | ------- | ----------------------------------------------------------------- |
-| changed | [NgJalaliDateTimeValueInterface](#NgJalaliDateTimeValueInterface) |
+| changed | [NgJalaliDateTimeValueInterface](#ngjalalidatetimevalueinterface) |
 
 ### Sample
 
@@ -137,7 +137,7 @@ export class MyComponent implements OnInit {
 
 ### jalali-month Directive
 
-![alt text](../../src/assets/month-picker.png 'jalali-month')
+![alt text](https://github.com/webilix/ng-jalali-date-time/raw/master/src/assets/month-picker.png 'jalali-month')
 
 ```html
 <span jalali-month></span>
@@ -149,8 +149,8 @@ export class MyComponent implements OnInit {
 | ------ | ------------------------------------------------------------------- | ------------------------------------- |
 | form   | FormGroup                                                           | Components FormGroup (Reactive Forms) |
 | name   | string                                                              | Form object name (Reactive Forms)     |
-| config | [NgJalaliDateTimeConfigInterface](#NgJalaliDateTimeConfigInterface) | Object configurations                 |
-| css    | [NgJalaliDateTimeCssInterface](#NgJalaliDateTimeCssInterface)       | Object css styles                     |
+| config | [NgJalaliDateTimeConfigInterface](#ngjalalidatetimeconfiginterface) | Object configurations                 |
+| css    | [NgJalaliDateTimeCssInterface](#ngjalalidatetimecssinterface)       | Object css styles                     |
 | month  | string                                                              | Default month value                   |
 | label  | string                                                              | mat-form-field label                  |
 
@@ -158,7 +158,7 @@ export class MyComponent implements OnInit {
 
 | Name    | type                                                        |
 | ------- | ----------------------------------------------------------- |
-| changed | [NgJalaliMonthValueInterface](#NgJalaliMonthValueInterface) |
+| changed | [NgJalaliMonthValueInterface](#ngjalalimonthvalueinterface) |
 
 ### Sample
 
@@ -217,7 +217,7 @@ export class MyComponent implements OnInit {
 
 ### jalali-range Directive
 
-![alt text](../../src/assets/range-picker.png 'jalali-range')
+![alt text](https://github.com/webilix/ng-jalali-date-time/raw/master/src/assets/range-picker.png 'jalali-range')
 
 ```html
 <span jalali-range></span>
@@ -229,8 +229,8 @@ export class MyComponent implements OnInit {
 | ------ | ------------------------------------------------------------------- | --------------------------------------- |
 | form   | FormGroup                                                           | Components FormGroup (Reactive Forms)   |
 | name   | string                                                              | Form object name (Reactive Forms)       |
-| config | [NgJalaliDateTimeConfigInterface](#NgJalaliDateTimeConfigInterface) | Object configurations                   |
-| css    | [NgJalaliDateTimeCssInterface](#NgJalaliDateTimeCssInterface)       | Object css styles                       |
+| config | [NgJalaliDateTimeConfigInterface](#ngjalalidatetimeconfiginterface) | Object configurations                   |
+| css    | [NgJalaliDateTimeCssInterface](#ngjalalidatetimecssinterface)       | Object css styles                       |
 | from   | string                                                              | Default range's first date (from) value |
 | to     | string                                                              | Default range's last date (to) value    |
 | label  | string                                                              | mat-form-field label                    |
@@ -239,7 +239,7 @@ export class MyComponent implements OnInit {
 
 | Name    | type                                                        |
 | ------- | ----------------------------------------------------------- |
-| changed | [NgJalaliRangeValueInterface](#NgJalaliRangeValueInterface) |
+| changed | [NgJalaliRangeValueInterface](#ngjalalirangevalueinterface) |
 
 ### Sample
 
@@ -328,8 +328,8 @@ export class MyComponent implements OnInit {
 | item     | [NgStyle] object | Calendar date/month items CSS style                                             |
 | selected | [NgStyle] object | Selected date/month item CSS style                                              |
 | current  | [NgStyle] object | Current date/month item CSS style                                               |
-| date     | object           | [jalali-date-time Directive CSS styles](#jalali-date-time-Directive-CSS-styles) |
-| range    | object           | [jalali-range Directive CSS styles](#jalali-range-Directive-CSS-styles)         |
+| date     | object           | [jalali-date-time Directive CSS styles](#jalali-date-time-directive-css-styles) |
+| range    | object           | [jalali-range Directive CSS styles](#jalali-range-directive-css-styles)         |
 
 #### jalali-date-time Directive CSS styles
 

@@ -1,6 +1,27 @@
 {
     "name": "ng-jalali-date-time",
-    "version": "0.0.1",
+    "version": "0.0.4",
+    "description": "Jalali date / month / range picker for Angular with Material Design support",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webilix/ng-jalali-date-time.git"
+    },
+    "keywords": [
+        "angular",
+        "date-picker",
+        "datetime-picker",
+        "month-picker",
+        "range-picker",
+        "jalali",
+        "persian",
+        "farsi"
+    ],
+    "author": "Ali Amirnezhad",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/webilix/ng-jalali-date-time/issues"
+    },
+    "homepage": "https://github.com/webilix/ng-jalali-date-time#readme",
     "peerDependencies": {
         "@angular/common": "^8.2.11",
         "@angular/core": "^8.2.11",
