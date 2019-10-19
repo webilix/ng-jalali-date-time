@@ -194,7 +194,7 @@ export class MyComponent implements OnInit {
         this.form = new FormGroup({})
     }
 
-    dateChanged(value: NgJalaliDateTimeValueInterface) {
+    dateChanged(value: NgJalaliMonthValueInterface) {
         console.log(value);
     }
 }
