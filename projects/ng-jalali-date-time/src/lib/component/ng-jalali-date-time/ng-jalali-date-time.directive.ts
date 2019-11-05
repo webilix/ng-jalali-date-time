@@ -20,6 +20,7 @@ import { NgJalaliDateTimeConfigInterface, NgJalaliDateTimeCssInterface } from '.
 export class NgJalaliDateTimeDirective implements OnInit {
     @Input() form: FormGroup;
     @Input() name: string;
+    @Input() appearance: string;
     @Input() config: NgJalaliDateTimeConfigInterface;
     @Input() css: NgJalaliDateTimeCssInterface;
 
@@ -42,6 +43,7 @@ export class NgJalaliDateTimeDirective implements OnInit {
     ngOnInit() {
         if (!this.form) this.form = new FormGroup({});
         if (!this.name) this.name = 'jalali-date-time-' + Date.now().toString();
+        this.appearance = this.service.checkAppearance(this.appearance);
 
         if (!this.config) this.config = {};
         this.config.required = this.config.required ? true : false;
@@ -62,6 +64,7 @@ export class NgJalaliDateTimeDirective implements OnInit {
         this.component = this.container.createComponent(factory);
         this.component.instance.form = this.form;
         this.component.instance.name = this.name;
+        this.component.instance.appearance = this.appearance;
         this.component.instance.config = this.config;
         this.component.instance.css = this.css;
 

@@ -4,8 +4,8 @@
     <input type="text" [formControlName]="name" />
 </div>
 
-<content class="ng-jalali">
-    <mat-form-field [ngStyle]="css.field" class="ng-jalali" [formGroup]="form">
+<content class="ng-jalali" dir="rtl">
+    <mat-form-field [ngStyle]="css.field" class="ng-jalali" [formGroup]="form" [appearance]="appearance">
         <mat-label [ngStyle]="{ fontFamily: css.font }">{{ label }}</mat-label>
         <input
             matInput

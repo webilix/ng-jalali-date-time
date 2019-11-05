@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { NgJalaliDateTimeService } from './ng-jalali-date-time.service';
@@ -39,7 +38,7 @@ import { NgJalaliDaysPipe } from './pipes/ng-jalali-days.pipe';
         NgJalaliDaysPipe
     ],
     providers: [NgJalaliDateTimeService],
-    imports: [BrowserModule, BrowserAnimationsModule, ReactiveFormsModule, MaterialModule],
+    imports: [CommonModule, ReactiveFormsModule, MaterialModule],
     exports: [
         NgJalaliDateTimeDirective,
         NgJalaliMonthDirective,

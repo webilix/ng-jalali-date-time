@@ -60,15 +60,16 @@ import { NgJalaliDateTimeModule } from 'ng-jalali-date-time';
 
 ### Properties
 
-| Name   | Type                                                                | Description                           |
-| ------ | ------------------------------------------------------------------- | ------------------------------------- |
-| form   | FormGroup                                                           | Components FormGroup (Reactive Forms) |
-| name   | string                                                              | Form object name (Reactive Forms)     |
-| config | [NgJalaliDateTimeConfigInterface](#ngjalalidatetimeconfiginterface) | Object configurations                 |
-| css    | [NgJalaliDateTimeCssInterface](#ngjalalidatetimecssinterface)       | Object css styles                     |
-| date   | string                                                              | Default date value                    |
-| time   | string                                                              | Default time value                    |
-| label  | string                                                              | mat-form-field label                  |
+| Name       | Type                                                                | Description                                              |
+| ---------- | ------------------------------------------------------------------- | -------------------------------------------------------- |
+| form       | FormGroup                                                           | Components FormGroup (Reactive Forms)                    |
+| name       | string                                                              | Form object name (Reactive Forms)                        |
+| appearance | string                                                              | Form object appearance (legacy, standard, fill, outline) |
+| config     | [NgJalaliDateTimeConfigInterface](#ngjalalidatetimeconfiginterface) | Object configurations                                    |
+| css        | [NgJalaliDateTimeCssInterface](#ngjalalidatetimecssinterface)       | Object css styles                                        |
+| date       | string                                                              | Default date value                                       |
+| time       | string                                                              | Default time value                                       |
+| label      | string                                                              | mat-form-field label                                     |
 
 ### Events
 
@@ -145,14 +146,15 @@ export class MyComponent implements OnInit {
 
 ### Properties
 
-| Name   | Type                                                                | Description                           |
-| ------ | ------------------------------------------------------------------- | ------------------------------------- |
-| form   | FormGroup                                                           | Components FormGroup (Reactive Forms) |
-| name   | string                                                              | Form object name (Reactive Forms)     |
-| config | [NgJalaliDateTimeConfigInterface](#ngjalalidatetimeconfiginterface) | Object configurations                 |
-| css    | [NgJalaliDateTimeCssInterface](#ngjalalidatetimecssinterface)       | Object css styles                     |
-| month  | string                                                              | Default month value                   |
-| label  | string                                                              | mat-form-field label                  |
+| Name       | Type                                                                | Description                                              |
+| ---------- | ------------------------------------------------------------------- | -------------------------------------------------------- |
+| form       | FormGroup                                                           | Components FormGroup (Reactive Forms)                    |
+| name       | string                                                              | Form object name (Reactive Forms)                        |
+| appearance | string                                                              | Form object appearance (legacy, standard, fill, outline) |
+| config     | [NgJalaliDateTimeConfigInterface](#ngjalalidatetimeconfiginterface) | Object configurations                                    |
+| css        | [NgJalaliDateTimeCssInterface](#ngjalalidatetimecssinterface)       | Object css styles                                        |
+| month      | string                                                              | Default month value                                      |
+| label      | string                                                              | mat-form-field label                                     |
 
 ### Events
 
@@ -225,15 +227,16 @@ export class MyComponent implements OnInit {
 
 ### Properties
 
-| Name   | Type                                                                | Description                             |
-| ------ | ------------------------------------------------------------------- | --------------------------------------- |
-| form   | FormGroup                                                           | Components FormGroup (Reactive Forms)   |
-| name   | string                                                              | Form object name (Reactive Forms)       |
-| config | [NgJalaliDateTimeConfigInterface](#ngjalalidatetimeconfiginterface) | Object configurations                   |
-| css    | [NgJalaliDateTimeCssInterface](#ngjalalidatetimecssinterface)       | Object css styles                       |
-| from   | string                                                              | Default range's first date (from) value |
-| to     | string                                                              | Default range's last date (to) value    |
-| label  | string                                                              | mat-form-field label                    |
+| Name       | Type                                                                | Description                                              |
+| ---------- | ------------------------------------------------------------------- | -------------------------------------------------------- |
+| form       | FormGroup                                                           | Components FormGroup (Reactive Forms)                    |
+| name       | string                                                              | Form object name (Reactive Forms)                        |
+| appearance | string                                                              | Form object appearance (legacy, standard, fill, outline) |
+| config     | [NgJalaliDateTimeConfigInterface](#ngjalalidatetimeconfiginterface) | Object configurations                                    |
+| css        | [NgJalaliDateTimeCssInterface](#ngjalalidatetimecssinterface)       | Object css styles                                        |
+| from       | string                                                              | Default range's first date (from) value                  |
+| to         | string                                                              | Default range's last date (to) value                     |
+| label      | string                                                              | mat-form-field label                                     |
 
 ### Events
 

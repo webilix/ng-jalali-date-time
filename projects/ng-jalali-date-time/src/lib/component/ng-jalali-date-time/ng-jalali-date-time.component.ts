@@ -22,6 +22,7 @@ import { NgJalaliDateTimeConfigInterface, NgJalaliDateTimeCssInterface } from '.
 export class NgJalaliDateTimeComponent implements OnInit {
     public form: FormGroup;
     public name: string;
+    public appearance: string;
     public config: NgJalaliDateTimeConfigInterface;
     public css: NgJalaliDateTimeCssInterface;
 

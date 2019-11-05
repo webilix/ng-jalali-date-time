@@ -11,6 +11,7 @@
                 <section class="jalali">
                     <span
                         jalali-date-time
+                        appearance="legacy"
                         [config]="{ time: true }"
                         [css]="{ font: 'yekan' }"
                         label="انتخاب تاریخ"
@@ -30,7 +31,13 @@
             <mat-divider></mat-divider>
             <mat-card-content>
                 <section class="jalali">
-                    <span jalali-month [css]="{ font: 'yekan' }" label="انتخاب ماه" (changed)="setMonth($event)"></span>
+                    <span
+                        jalali-month
+                        appearance="fill"
+                        [css]="{ font: 'yekan' }"
+                        label="انتخاب ماه"
+                        (changed)="setMonth($event)"
+                    ></span>
                 </section>
                 <section class="value">
                     <pre *ngIf="values.month">{{ values.month | json }}</pre>
@@ -47,6 +54,7 @@
                 <section class="jalali">
                     <span
                         jalali-range
+                        appearance="outline"
                         [css]="{ font: 'yekan' }"
                         label="انتخاب بازه زمانی"
                         (changed)="setRange($event)"

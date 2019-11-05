@@ -21,6 +21,7 @@ import { JalaliLocale } from '../../shared/jalali.locale';
 export class NgJalaliMonthComponent implements OnInit {
     public form: FormGroup;
     public name: string;
+    public appearance: string;
     public config: NgJalaliDateTimeConfigInterface;
     public css: NgJalaliDateTimeCssInterface;
 

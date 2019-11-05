@@ -55,6 +55,10 @@ export class NgJalaliDateTimeService {
         return date;
     }
 
+    checkAppearance(appearance: string): string {
+        return ['legacy', 'standard', 'fill', 'outline'].includes(appearance) ? appearance : 'legacy';
+    }
+
     private setFontCSS(css: Object, font: string): Object {
         return { ...css, fontFamily: font };
     }
