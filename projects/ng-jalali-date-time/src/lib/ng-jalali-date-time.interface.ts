@@ -12,20 +12,20 @@ export interface NgJalaliDateTimeConfigInterface {
 export interface NgJalaliDateTimeCssInterface {
     font?: string;
 
-    field?: Object; // mat-form-field.ng-jalali
-    input?: Object; // input.ng-jalali
-    reset?: Object; // button.ng-jalali-reset
-    box?: Object; // div.ng-jalali-calendar
-    arrow?: Object; // div.ng-jalali-header div
-    header?: Object; // div.ng-jalali-header div.ng-jalali-title
-    item?: Object; // div.ng-jalali-date-time-day button && div.ng-jalali-month-season button && div.ng-jalali-range-day button
-    selected?: Object; // button.ng-jalali-selected
-    current?: Object; // button.ng-jalali-current
+    field?: { [key: string]: any }; // mat-form-field.ng-jalali
+    input?: { [key: string]: any }; // input.ng-jalali
+    reset?: { [key: string]: any }; // button.ng-jalali-reset
+    box?: { [key: string]: any }; // div.ng-jalali-calendar
+    arrow?: { [key: string]: any }; // div.ng-jalali-header div
+    header?: { [key: string]: any }; // div.ng-jalali-header div.ng-jalali-title
+    item?: { [key: string]: any }; // div.ng-jalali-date-time-day button && div.ng-jalali-month-season button && div.ng-jalali-range-day button
+    selected?: { [key: string]: any }; // button.ng-jalali-selected
+    current?: { [key: string]: any }; // button.ng-jalali-current
 
     // date-time
     date?: {
-        name?: Object; // div.ng-jalali-date-time-header div
-        time?: Object; // div.ng-jalali-date-time-time input
+        name?: { [key: string]: any }; // div.ng-jalali-date-time-header div
+        time?: { [key: string]: any }; // div.ng-jalali-date-time-time input
     };
 
     // month
@@ -33,10 +33,10 @@ export interface NgJalaliDateTimeCssInterface {
 
     // range
     range?: {
-        tool?: Object; // div.ng-jalali-range-tools button
-        custom?: Object; // div.ng-jalali-range-tools button.ng-jalali-range-custom (deactive)
-        confirm?: Object; // div.ng-jalali-range-tools button.ng-jalali-range-custom (active)
-        name?: Object; // div.ng-jalali-range-header div
-        date?: Object; // div.ng-jalali-range-custom-title
+        tool?: { [key: string]: any }; // div.ng-jalali-range-tools button
+        custom?: { [key: string]: any }; // div.ng-jalali-range-tools button.ng-jalali-range-custom (deactive)
+        confirm?: { [key: string]: any }; // div.ng-jalali-range-tools button.ng-jalali-range-custom (active)
+        name?: { [key: string]: any }; // div.ng-jalali-range-header div
+        date?: { [key: string]: any }; // div.ng-jalali-range-custom-title
     };
 }

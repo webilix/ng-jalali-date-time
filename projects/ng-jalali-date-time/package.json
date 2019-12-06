@@ -1,6 +1,6 @@
 {
     "name": "ng-jalali-date-time",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "Jalali date / month / range picker for Angular with Material Design support",
     "repository": {
         "type": "git",

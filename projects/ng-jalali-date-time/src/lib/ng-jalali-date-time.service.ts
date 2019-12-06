@@ -16,7 +16,7 @@ export class NgJalaliDateTimeService {
         dateFormat: 'Y-M-D',
         timeFormat: 'H:I:S',
         titleFormat: 'W، d N Y',
-        fullTextFormat: 'W، d N Y H:I:S'
+        fullTextFormat: 'W، d N Y H:I:S',
     });
 
     public jalaliLocale = new JalaliLocale();
@@ -59,7 +59,7 @@ export class NgJalaliDateTimeService {
         return ['legacy', 'standard', 'fill', 'outline'].includes(appearance) ? appearance : 'legacy';
     }
 
-    private setFontCSS(css: Object, font: string): Object {
+    private setFontCSS(css: { [key: string]: any }, font: string): { [key: string]: any } {
         return { ...css, fontFamily: font };
     }
 
@@ -90,7 +90,11 @@ export class NgJalaliDateTimeService {
         css.range.custom = css.range.custom ? css.range.custom : {};
         css.range.custom = { ...css.range.tool, ...css.range.custom };
         css.range.confirm = css.range.confirm ? css.range.confirm : {};
-        css.range.confirm = { ...css.range.tool, ...css.range.custom, ...css.range.confirm };
+        css.range.confirm = {
+            ...css.range.tool,
+            ...css.range.custom,
+            ...css.range.confirm,
+        };
         css.range.name = this.setFontCSS(css.range.name ? css.range.name : {}, css.font);
         css.range.date = this.setFontCSS(css.range.date ? css.range.date : {}, css.font);
 
@@ -99,7 +103,7 @@ export class NgJalaliDateTimeService {
 
     jalaliToGregorian(jalali: string, time?: string): Date {
         const gregorian: string = this.jalali.gregorian(jalali).date;
-        return new Date(gregorian + ' ' + (this.checkTime(time) ? time : '12:00:00'));
+        return new Date(gregorian + 'T' + (this.checkTime(time) ? time : '12:00:00'));
     }
 
     getCalendar(month: string): JalaliCalendarInterface {
@@ -113,7 +117,11 @@ export class NgJalaliDateTimeService {
         let days: JalaliDayInterface[] = [];
         let date = this.jalali.toDate(begin);
         while (date.substr(0, 7) <= month || days.length % 7 !== 0) {
-            days.push({ date, month: date.substr(0, 7), day: Number(date.substr(8)) });
+            days.push({
+                date,
+                month: date.substr(0, 7),
+                day: Number(date.substr(8)),
+            });
             if (days.length === 7) {
                 weeks.push({ days });
                 days = [];
@@ -141,7 +149,7 @@ export class NgJalaliDateTimeService {
      */
     getDateTimeValue(jalali: string, time: string): NgJalaliDateTimeValueInterface {
         const gregorian: string = jalali ? this.jalali.gregorian(jalali).date : '';
-        const date: Date = gregorian ? new Date(gregorian + ' ' + (time ? time : '12:00:00')) : null;
+        const date: Date = gregorian ? new Date(gregorian + 'T' + (time ? time : '12:00:00')) : null;
         const timestamp: number = gregorian ? Math.floor(date.getTime() / 1000) : null;
         time = time ? time : '00:00:00';
 
@@ -150,7 +158,7 @@ export class NgJalaliDateTimeService {
             gregorian,
             date,
             time,
-            timestamp
+            timestamp,
         };
     }
 
@@ -175,7 +183,7 @@ export class NgJalaliDateTimeService {
         return {
             month,
             days,
-            gregorian
+            gregorian,
         };
     }
 
@@ -200,8 +208,8 @@ export class NgJalaliDateTimeService {
             gregorian.from = this.jalali.gregorian(from).date;
             gregorian.to = this.jalali.gregorian(to).date;
 
-            const fTimestamp: number = Math.floor(new Date(gregorian.from + ' 12:00:00').getTime() / 1000);
-            const tTimestamp: number = Math.floor(new Date(gregorian.to + ' 12:00:00').getTime() / 1000);
+            const fTimestamp: number = Math.floor(new Date(gregorian.from + 'T12:00:00').getTime() / 1000);
+            const tTimestamp: number = Math.floor(new Date(gregorian.to + 'T12:00:00').getTime() / 1000);
             days = Math.floor(Math.abs((tTimestamp - fTimestamp) / (24 * 3600))) + 1;
             hours = days * 24;
             minutes = hours * 60;
@@ -216,7 +224,7 @@ export class NgJalaliDateTimeService {
             hours,
             minutes,
             seconds,
-            gregorian
+            gregorian,
         };
     }
 
