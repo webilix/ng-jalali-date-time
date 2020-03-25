@@ -17,7 +17,7 @@
             class="ng-jalali"
         />
         <span *ngIf="config.reset && value.jalali !== ''" matSuffix (click)="setDate(''); reset = true">
-            <button mat-button [ngStyle]="css.reset" class="ng-jalali-reset">x</button>
+            <button mat-button type="button" [ngStyle]="css.reset" class="ng-jalali-reset">x</button>
         </span>
         <mat-error [ngStyle]="{ fontFamily: css.font }" *ngIf="form.get(name + '-title').hasError('required')">
             {{ config.error }}
@@ -29,6 +29,7 @@
             <div>
                 <button
                     mat-icon-button
+                    type="button"
                     [ngStyle]="css.arrow"
                     (click)="changeMonth(-12)"
                     [disabled]="month.substr(0, 4) === '1000'"
@@ -39,6 +40,7 @@
             <div>
                 <button
                     mat-icon-button
+                    type="button"
                     [ngStyle]="css.arrow"
                     (click)="changeMonth(-1)"
                     [disabled]="month === '1000-01'"
@@ -48,10 +50,10 @@
             </div>
             <div class="ng-jalali-title" [ngStyle]="css.header">{{ calendar.title }}</div>
             <div>
-                <button mat-icon-button [ngStyle]="css.arrow" (click)="changeMonth(1)">&gt;</button>
+                <button mat-icon-button type="button" [ngStyle]="css.arrow" (click)="changeMonth(1)">&gt;</button>
             </div>
             <div>
-                <button mat-icon-button [ngStyle]="css.arrow" (click)="changeMonth(12)">&gt;&gt;</button>
+                <button mat-icon-button type="button" [ngStyle]="css.arrow" (click)="changeMonth(12)">&gt;&gt;</button>
             </div>
         </div>
         <div class="ng-jalali-date-time-header">
@@ -61,6 +63,7 @@
             <div *ngFor="let day of week.days" class="ng-jalali-date-time-day">
                 <button
                     mat-icon-button
+                    type="button"
                     [disabled]="
                         day.month !== month ||
                         (config.min && day.date < config.min) ||

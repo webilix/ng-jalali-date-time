@@ -17,7 +17,7 @@
             class="ng-jalali"
         />
         <span *ngIf="config.reset && value.month !== ''" matSuffix (click)="setMonth(''); reset = true">
-            <button mat-button [ngStyle]="css.reset" class="ng-jalali-reset">x</button>
+            <button mat-button type="button" [ngStyle]="css.reset" class="ng-jalali-reset">x</button>
         </span>
         <mat-error [ngStyle]="{ fontFamily: css.font }" *ngIf="form.get(name + '-title').hasError('required')">
             {{ config.error }}
@@ -27,21 +27,33 @@
     <div class="ng-jalali-calendar" [ngStyle]="css.box" [@calendar] *ngIf="show">
         <div class="ng-jalali-header">
             <div>
-                <button mat-icon-button [ngStyle]="css.arrow" (click)="changeYear(-10)" [disabled]="year <= '1010'">
+                <button
+                    mat-icon-button
+                    type="button"
+                    [ngStyle]="css.arrow"
+                    (click)="changeYear(-10)"
+                    [disabled]="year <= '1010'"
+                >
                     &lt;&lt;
                 </button>
             </div>
             <div>
-                <button mat-icon-button [ngStyle]="css.arrow" (click)="changeYear(-1)" [disabled]="year === '1000'">
+                <button
+                    mat-icon-button
+                    type="button"
+                    [ngStyle]="css.arrow"
+                    (click)="changeYear(-1)"
+                    [disabled]="year === '1000'"
+                >
                     &lt;
                 </button>
             </div>
             <div class="ng-jalali-title" [ngStyle]="css.header">{{ year }}</div>
             <div>
-                <button mat-icon-button [ngStyle]="css.arrow" (click)="changeYear(1)">&gt;</button>
+                <button mat-icon-button type="button" [ngStyle]="css.arrow" (click)="changeYear(1)">&gt;</button>
             </div>
             <div>
-                <button mat-icon-button [ngStyle]="css.arrow" (click)="changeYear(10)">&gt;&gt;</button>
+                <button mat-icon-button type="button" [ngStyle]="css.arrow" (click)="changeYear(10)">&gt;&gt;</button>
             </div>
         </div>
         <mat-divider></mat-divider>
@@ -49,6 +61,7 @@
             <ng-container *ngFor="let month of season">
                 <button
                     mat-button
+                    type="button"
                     [disabled]="
                         (config.min && year + '-' + month.month < config.min) ||
                         (config.max && year + '-' + month.month > config.max)
