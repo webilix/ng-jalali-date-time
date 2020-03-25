@@ -5,6 +5,6 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
-    exports: [MatInputModule, MatButtonModule, MatDividerModule]
+    exports: [MatInputModule, MatButtonModule, MatDividerModule],
 })
 export class MaterialModule {}
