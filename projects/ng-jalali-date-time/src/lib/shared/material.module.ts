@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 
-import { MatInputModule, MatButtonModule, MatDividerModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
     exports: [MatInputModule, MatButtonModule, MatDividerModule]
