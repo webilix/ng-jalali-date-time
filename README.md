@@ -2,6 +2,8 @@
 
 Jalali date / month / range picker for Angular with Material Design support
 
+**This library uses Angular 9**
+
 [Full Help](https://github.com/webilix/ng-jalali-date-time/blob/master/projects/ng-jalali-date-time/README.md)
 
 ---
