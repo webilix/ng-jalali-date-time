@@ -2,7 +2,7 @@
 
 Jalali date / month / range picker for Angular with Material Design support
 
-**This library uses Angular 9**
+**This library uses Angular 10**
 
 ---
 

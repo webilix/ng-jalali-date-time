@@ -1,0 +1,26 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "baseUrl": "./",
+        "outDir": "./dist/out-tsc",
+        "sourceMap": true,
+        "declaration": false,
+        "downlevelIteration": true,
+        "experimentalDecorators": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "importHelpers": true,
+        "target": "es2015",
+        "typeRoots": ["node_modules/@types"],
+        "lib": ["es2018", "dom"],
+        "paths": {
+            "ng-jalali-date-time": ["dist/ng-jalali-date-time"],
+            "ng-jalali-date-time/*": ["dist/ng-jalali-date-time/*"]
+        }
+    },
+    "angularCompilerOptions": {
+        "fullTemplateTypeCheck": true,
+        "strictInjectionParameters": true,
+        "enableIvy": false
+    }
+}
