@@ -1,1 +1,0 @@
-{"ast":null,"code":"/*\n * Public API Surface of ng-jalali-date-time\n */\nexport { NgJalaliDateTimeModule } from './lib/ng-jalali-date-time.module';","map":null,"metadata":{},"sourceType":"module"}
